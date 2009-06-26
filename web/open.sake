@@ -1,0 +1,12 @@
+namespace 'web' do
+  desc "Launches this Passenger folder/app as http://folder.local"
+  task :open do
+    require "fileutils"
+    current_path = FileUtils.pwd
+    unless current_path =~ %r{Sites/([^/]+)/}
+      puts "Not a passenger project (within ~/Sites/project_name)"
+      exit
+    end
+    open "http://#{$1}.local"
+  end
+end
