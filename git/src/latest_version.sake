@@ -11,7 +11,7 @@ namespace 'git' do
         exit
       end
       require "open-uri"
-      doc = open('http://git.or.cz/').read
+      doc = open('http://git-scm.com/').read
       if download_url = doc.match(%r{http://kernel.org/pub/software/scm/git/git-([\d.]+).tar.gz})
         ENV['GIT_DOWNLOAD_URL'] = download_url[0]
         puts "Current git src version: #{$1}"

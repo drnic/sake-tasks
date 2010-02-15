@@ -1,1 +1,0 @@
-Dir['*/**/*.sake'].sort.reverse.each { |sake| load sake }
